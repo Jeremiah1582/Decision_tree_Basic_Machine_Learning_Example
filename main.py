@@ -40,20 +40,19 @@ def training_model():
 # step 4:
 # Model instance 
     model = DecisionTreeClassifier()
-    model.fit(x,y) #Data fed to instance
+    model.fit(x,y) 
+
+# Step 5: plot the tree 
+    tree.plot_tree(model, feature_names=features)
     
-    return tree.plot_tree(model, feature_names=features)
-    
+# Step 6: Human visible display-- these Two  lines make our compiler able to draw
 
-# trained_model = training_model()
-
-# def make_prediction(model,value):
-#     return model.predict(np.array([[value]]))
-
-# print(make_prediction(trained_model,15 ))
-print(training_model())
+    # plt.savefig('dtree_diagram.png')#to save diagram to file 
+    plt.show() #plots the images you created in your code
+    sys.stdout.flush() #this flushed the write-buffer, making sure anything in the stream is displayed
 
 
-# 
-plt.savefig(sys.stdout.buffer)
-sys.stdout.flush()
+
+training_model()
+
+# NOTE: matplotlib.pyplot module is designed to display all figures that have been created during a scrip
